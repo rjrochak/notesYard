@@ -12,7 +12,7 @@
     <?php include("includes/header.php"); ?>
     </header>
 
-   <button class="btn btn-danger">khatara</button>
+   
     <?php include("includes/footer.php"); ?>
     <script src="../js/bootstrap.js"></script>
     <script src="../js/popper.js"></script>

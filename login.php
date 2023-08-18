@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
+    <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.min.css" integrity="sha256-VJuwjrIWHWsPSEvQV4DiPfnZi7axOaiWwKfXaJnR5tA=" crossorigin="anonymous">
     <style>
       .btn-color{
     background-color: #0e1c36;
@@ -32,8 +31,11 @@
     </style>
 </head>
 <body>
-
-<?php
+    <header>
+    <?php include("includes/header.php"); ?>
+    </header>
+    <section>
+    <?php
     include("connection.php");
      if($_POST){
       extract($_POST);
@@ -54,15 +56,8 @@
     </div>';
     }
 }
-     
-
-
-
-
-
-    ?>
-
-<div class="container">
+?>
+    <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <h2 class="text-center text-dark mt-5">Login Form</h2>
@@ -94,12 +89,10 @@
       </div>
     </div>
   </div>
-
+    </section>
    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.min.css" integrity="sha256-VJuwjrIWHWsPSEvQV4DiPfnZi7axOaiWwKfXaJnR5tA=" crossorigin="anonymous">
-    <script src="../js/bootstrap.js"></script>
-<script src="../js/popper.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <?php include("includes/footer.php"); ?>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/popper.js"></script>
 </body>
 </html>
