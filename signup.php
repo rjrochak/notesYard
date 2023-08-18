@@ -37,15 +37,7 @@ label {
 
 input[type="text"],
 input[type="email"],
-input[type="password"],
-select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
+input[type="password"],  
 
 input[type="submit"] {
     background-color: #007bff;
