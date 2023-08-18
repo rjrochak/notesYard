@@ -4,7 +4,8 @@ $username =  "root";
 $password =  "";
 $database = "NotesYard";
 
-$connect = mysqli_connect("localhost","root","","notesyard");
+$connect = mysqli_connect($hostname,$username,$password,$database);
+
 
 
 ?>

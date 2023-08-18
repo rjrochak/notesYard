@@ -32,6 +32,36 @@
     </style>
 </head>
 <body>
+
+<?php
+    include("connection.php");
+     if($_POST){
+      extract($_POST);
+      $query = mysqli_query($connect, "SELECT * from user where username= '$username' and password='$password'");
+      if(mysqli_num_rows($query)!= 0){
+        $result = mysqli_fetch_assoc($query);
+        session_start();
+        $_SESSION['id'] = $result['id'];
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>THANK YOU!!</strong> DATA SAVED SUCCESFULLY.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>';
+
+    }else{
+      echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>OOPS!!</strong> SOMETHING WENT WRONG.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>';
+    }
+}
+     
+
+
+
+
+
+    ?>
+
 <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
@@ -65,36 +95,11 @@
     </div>
   </div>
 
-    <?php
-     if($_POST){
-      extract($_POST);
-      $hostname = "localhost";
-      $connect = mysqli_connect($hostname,"root","","notesyard");
-      $query = mysqli_query($connect, "SELECT * from user where username= '$username' and password='$password'");
-      if(mysqli_num_rows($query)!= 0){
-        $result = mysqli_fetch_assoc($query);
-        session_start();
-        $_SESSION['id'] = $result['id'];
-        echo "<script>Swal.fire(
-          'sucess',
-          'data saved succesfully!',
-          'success'
-        )</script>";
-
-    }else{
-        echo "invalid email and password";
-    }
-}
-     
-
-
-
-
-
-    ?>
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.min.css" integrity="sha256-VJuwjrIWHWsPSEvQV4DiPfnZi7axOaiWwKfXaJnR5tA=" crossorigin="anonymous">
     <script src="../js/bootstrap.js"></script>
 <script src="../js/popper.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
