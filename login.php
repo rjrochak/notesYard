@@ -44,6 +44,7 @@
         $result = mysqli_fetch_assoc($query);
         session_start();
         $_SESSION['id'] = $result['id'];
+        $_SESSION['naam'] = $result['username'];
         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>THANK YOU!!</strong> DATA SAVED SUCCESFULLY.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -91,7 +92,7 @@
   </div>
     </section>
    
-    <?php include("includes/footer.php"); ?>
+    
     <script src="js/bootstrap.js"></script>
     <script src="js/popper.js"></script>
 </body>

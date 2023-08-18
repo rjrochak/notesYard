@@ -12,7 +12,12 @@
     <?php include("includes/header.php"); ?>
     </header>
 <section>
- <h1>this is About us page</h1>
+  <?php
+  session_start();
+  $id =$_SESSION['id'];
+  $name =$_SESSION['naam'];
+  echo "Hello $name tumhari id $id hai";
+  ?>
 </section>
    
     <?php include("includes/footer.php"); ?>
