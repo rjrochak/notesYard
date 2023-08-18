@@ -12,8 +12,7 @@
     <?php include("includes/header.php"); ?>
     </header>
 <section>
- <!-- add your all code here -->
-
+ <h1>this is About us page</h1>
 </section>
    
     <?php include("includes/footer.php"); ?>
