@@ -103,5 +103,26 @@ input[type="submit"]:hover {
 <script src="../js/bootstrap.js"></script>
 <script src="../js/popper.js"></script>
 
+<!-- <?php
+  $hostname = "localhost";
+  $username = "root";
+  $gender = "";
+  $email = "";
+  $password = "";
+  $database = "notesyard";
+  
+  
+  $connect = mysqli_connect($hostname,$username,$gender,$email,$password,$database);
+
+  if($_POST){
+    extract($_POST);
+
+  }
+  ?>
+
+
+?> -->
+  
+
 </body>
 </html>
