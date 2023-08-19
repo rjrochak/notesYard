@@ -10,7 +10,7 @@
 <body>
     <?php include("header.php"); ?>
 
-   <button class="btn btn-danger">khatara</button>
+   
     <?php include("header.php"); ?>
     <script src="../js/bootstrap.js"></script>
     <script src="../js/popper.js"></script>
