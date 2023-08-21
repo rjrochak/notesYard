@@ -11,7 +11,7 @@
     <?php include("header.php"); ?>
 
    
-    <?php include("header.php"); ?>
+    <?php include("footer.php"); ?>
     <script src="../js/bootstrap.js"></script>
     <script src="../js/popper.js"></script>
 </body>
