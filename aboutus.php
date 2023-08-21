@@ -12,8 +12,12 @@
     <?php include("includes/header.php"); ?>
     </header>
 <section>
- <!-- add your all code here -->
-
+  <?php
+  session_start();
+  $id =$_SESSION['id'];
+  $name =$_SESSION['naam'];
+  echo "Hello $name tumhari id $id hai";
+  ?>
 </section>
    
     <?php include("includes/footer.php"); ?>

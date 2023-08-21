@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
+    <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.min.css" integrity="sha256-VJuwjrIWHWsPSEvQV4DiPfnZi7axOaiWwKfXaJnR5tA=" crossorigin="anonymous">
     <style>
       .btn-color{
     background-color: #0e1c36;
@@ -32,7 +31,34 @@
     </style>
 </head>
 <body>
-<div class="container">
+    <header>
+    <?php include("includes/header.php"); ?>
+    </header>
+    <section>
+    <?php
+    include("connection.php");
+     if($_POST){
+      extract($_POST);
+      $query = mysqli_query($connect, "SELECT * from user where username= '$username' and password='$password'");
+      if(mysqli_num_rows($query)!= 0){
+        $result = mysqli_fetch_assoc($query);
+        session_start();
+        $_SESSION['id'] = $result['id'];
+        $_SESSION['naam'] = $result['username'];
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>THANK YOU!!</strong> DATA SAVED SUCCESFULLY.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>';
+
+    }else{
+      echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>OOPS!!</strong> SOMETHING WENT WRONG.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>';
+    }
+}
+?>
+    <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <h2 class="text-center text-dark mt-5">Login Form</h2>
@@ -64,37 +90,10 @@
       </div>
     </div>
   </div>
-
-    <?php
-     if($_POST){
-      extract($_POST);
-      $hostname = "localhost";
-      $connect = mysqli_connect($hostname,"root","","notesyard");
-      $query = mysqli_query($connect, "SELECT * from user where username= '$username' and password='$password'");
-      if(mysqli_num_rows($query)!= 0){
-        $result = mysqli_fetch_assoc($query);
-        session_start();
-        $_SESSION['id'] = $result['id'];
-        echo "<script>Swal.fire(
-          'sucess',
-          'data saved succesfully!',
-          'success'
-        )</script>";
-
-    }else{
-        echo "invalid email and password";
-    }
-}
-     
-
-
-
-
-
-    ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.min.css" integrity="sha256-VJuwjrIWHWsPSEvQV4DiPfnZi7axOaiWwKfXaJnR5tA=" crossorigin="anonymous">
-    <script src="../js/bootstrap.js"></script>
-<script src="../js/popper.js"></script>
+    </section>
+   
+    
+    <script src="js/bootstrap.js"></script>
+    <script src="js/popper.js"></script>
 </body>
 </html>
