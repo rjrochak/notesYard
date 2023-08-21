@@ -1,34 +1,85 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>otp verification</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>OTP Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .otp-container {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .otp-input {
+            font-size: 24px;
+            width: 40px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 0 5px;
+            padding: 5px;
+        }
+
+        .generate-button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .generate-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-<div class="container height-100 d-flex justify-content-center align-items-center">
-    <div class="position-relative">
-        <div class="card p-2 text-center">
-            <h6>Please enter the one time password <br> to verify your account</h6>
-            <div> <span>A code has been sent to</span> <small>*******9897</small> </div>
-            <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2"> <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="second" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="third" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="fourth" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="fifth" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="sixth" maxlength="1" /> </div>
-            <div class="mt-4"> <button class="btn btn-danger px-4 validate">Validate</button> </div>
+    <div class="otp-container">
+        <h2>Enter One-Time Password (OTP)</h2>
+        <div>
+            <input type="text" class="otp-input" id="digit1" maxlength="1" onkeyup="focusNext(this)">
+            <input type="text" class="otp-input" id="digit2" maxlength="1" onkeyup="focusNext(this)">
+            <input type="text" class="otp-input" id="digit3" maxlength="1" onkeyup="focusNext(this)">
+            <input type="text" class="otp-input" id="digit4" maxlength="1">
         </div>
+        <button class="generate-button" onclick="generateOTP()">Generate OTP</button>
     </div>
-</div>
 
+    <script>
+        function generateOTP() {
+            var digits = '0123456789';
+            var otp = '';
 
+            for (var i = 0; i < 4; i++) {
+                otp += digits[Math.floor(Math.random() * digits.length)];
+            }
+
+            for (var i = 1; i <= 4; i++) {
+                document.getElementById('digit' + i).value = otp[i - 1];
+            }
+        }
+
+        function focusNext(input) {
+            var nextInput = input.nextElementSibling;
+
+            if (nextInput) {
+                nextInput.focus();
+            }
+        }
+    </script>
 </body>
 </html>
-
-
-
-
-
-<?php
-  $otp = rand(1000,9999);
-  echo $otp;
-  ?>
