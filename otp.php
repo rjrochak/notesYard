@@ -11,6 +11,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            
         }
 
         .otp-container {
@@ -19,6 +20,7 @@
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
             padding: 20px;
             text-align: center;
+            
         }
 
         .otp-input {
@@ -29,6 +31,10 @@
             border-radius: 5px;
             margin: 0 5px;
             padding: 5px;
+        
+
+
+            
         }
 
         .generate-button {
