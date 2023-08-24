@@ -1,5 +1,5 @@
 <header class="header">
-    <div class="logo"><img  class="img_logo" src=".\public\open-book.png" alt="">
+    <div class="logo"><img  class="img_logo" src=".\public\reading.png" alt="">
       <h3>Noteyard</h3>
     </div>
     <nav class="nav">
