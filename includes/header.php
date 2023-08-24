@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Noteyard</title>
+</head>
+<body>
 <header class="header">
     <div class="logo"><img  class="img_logo" src=".\public\reading.png" alt="">
       <h3>Noteyard</h3>
