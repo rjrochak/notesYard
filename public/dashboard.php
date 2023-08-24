@@ -26,12 +26,13 @@
 }
 .main-content {
     margin-left: 345px;
+
 }
 </style>
 <body>
     <div class="sidebar">
         <div class="sidebar-brand">
-            <h2><span class="lab la-assignment"></span> ASSIGNMENT</h2>
+            <h2><span class="lab la-notesyard"></span> NOTESYARD</h2>
         </div>
         <div class="sidebar-menu">
             <ul>
