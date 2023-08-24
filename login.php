@@ -92,7 +92,9 @@
   </div>
     </section>
    
-    
+    <footer class="footer">
+    <p>&copy; 2023 Noteyard. All rights reserved.</p>
+    </footer>
     <script src="js/bootstrap.js"></script>
     <script src="js/popper.js"></script>
 </body>

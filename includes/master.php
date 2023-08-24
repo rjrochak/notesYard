@@ -12,7 +12,7 @@
     <?php include("includes/header.php"); ?>
     </header>
 <section>
- <!-- add your all code here -->
+     <!-- add your all code here -->
 
 </section>
    

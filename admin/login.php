@@ -126,7 +126,10 @@ body {
 </style>
 </head>
 <body>
+<header>
+
     <section>
+
      <?php
     include("connection.php");
     if($_POST){
