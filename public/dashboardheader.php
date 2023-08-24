@@ -8,15 +8,15 @@
 </head>
 <body>
   <header class="header">
-    <div class="logo"><img  class="img_logo" src="reading.png" alt="">
+    <div class="logo"><img  class="img_logo" src="reading.png" alt="logo">
       <h3>Noteyard</h3>
     </div>
     <nav class="nav">
         <ul>
             <!-- Add the three buttons for MyNotes, Profile, and Logout -->
-            <li><a href="">MY NOTES</a></li>
+            <li><a href="">MY NOTE</a></li>
             <li><a href="profile.php">MY PROFILE</a></li>
-            <li><a href="logout.php">LOGOUT</a></li>
+            <li><a href="logout.php"> LOGOUT </a></li>
             <style>
                 /* Reset some default styles to ensure consistency */
                 body, h1, h2, h3, p, ul, li {
